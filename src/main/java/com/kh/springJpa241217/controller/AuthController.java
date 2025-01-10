@@ -36,7 +36,7 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(loginReqDto));
     }
     // accessToken 재발급
-    @PostMapping
+    @PostMapping("/refresh")
     public ResponseEntity<String> refreshToken(@RequestBody String refreshToken) {
         log.info("refresh Token : {}", refreshToken);
         return ResponseEntity.ok(authService.createAccessToken(refreshToken));
